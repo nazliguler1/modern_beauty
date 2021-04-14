@@ -12,3 +12,9 @@
       = render 'layouts/flash'
       %main#main
         = yield
+    %footer{:class => "footer mt-auto py-5 bg-white"}
+      %div{:class => "container"}
+        %p{:class => "footer-text"}
+          =link_to "Home", root_path
+          |
+          =link_to "About", about_path
