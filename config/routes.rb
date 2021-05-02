@@ -1,12 +1,25 @@
 Rails.application.routes.draw do
-  get 'welcome/index'
+  
+  resources :pairing
+  resources :profiles
+  match '/auth/:provider/callback', :to => 'sessions#create', :via => [:get, :post]
+  match 'auth/failure', :to => 'sessions#failure', :via => [:get, :post]
+  match 'sessions/destroy', :as => 'logout', :via => [:get, :post]
+  get 'sessions/start_test'
+  get 'sessions/clear'
+  get 'session/debug'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
+  resources :users, only: [:destroy] do
+    resources :profiles, only: [:show, :edit, :update, :destroy]
+  end
 
   # You can have the root of your site routed with "root"
   root 'welcome#index'
   
+  get 'welcome/index', :as => :welcome_index
+  get 'reservation/index', :as => :reservation_index
   get 'about' => 'welcome#about'
 
   # Example of regular route:
