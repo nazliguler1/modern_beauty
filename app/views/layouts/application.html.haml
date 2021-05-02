@@ -12,6 +12,8 @@
       = render 'layouts/flash'
       %main#main
         = yield
+        - unless @action == 'login'
+          = render "layouts/footer"
     %footer{:class => "footer mt-auto py-5 bg-white"}
       %div{:class => "container"}
         %p{:class => "footer-text"}
