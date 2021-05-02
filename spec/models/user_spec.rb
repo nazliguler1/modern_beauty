@@ -44,7 +44,7 @@ RSpec.describe User, type: :model do
         @user =  User.create!(name: 'Other Tester', email: 'otester@binghamton.edu')
       end 
       it "can't recover a previous user that does not exist" do
-          expect(User.find_with_auth_hash(OmniAuth.config.mock_auth[:github])).to eq(nil)
+          expect(User.find_with_auth_hash(OmniAuth.config.mock_auth[:github][:info])).to eq(nil)
       end
     end
   end 

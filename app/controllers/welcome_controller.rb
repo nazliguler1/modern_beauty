@@ -5,5 +5,6 @@ class WelcomeController < ApplicationController
   end
   
   def about
+    @action = 'login'
   end
 end
