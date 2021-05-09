@@ -15,7 +15,7 @@ Scenario: Register
   Given I am on the Modern Beauty landing page
   And I press "Register or Login with GitHub"
   Then I will see "Welcome Tester Suny! You have signed up via github."
-  And I will see "Editing profile"
+  And I will see "Modern Beauty - Services"
 
 @omniauth_test2
 Scenario:  Can't Register without SUNY ID
