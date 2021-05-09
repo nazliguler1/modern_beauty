@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  resources :pairing
+  resources :reservation
   resources :profiles
   match '/auth/:provider/callback', :to => 'sessions#create', :via => [:get, :post]
   match 'auth/failure', :to => 'sessions#failure', :via => [:get, :post]
@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
   
   get 'welcome/index', :as => :welcome_index
-  get 'reservation/index', :as => :reservation_index
+  #get 'reservation/index', :as => :reservation_index
   get 'about' => 'welcome#about'
 
   # Example of regular route:
