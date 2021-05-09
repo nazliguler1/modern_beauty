@@ -25,7 +25,8 @@ class SessionsController < ApplicationController
         message = "Welcome #{@user.name}! You have signed up via #{auth.provider}."
         flash[:notice] = message
         @profile = @user.create_profile
-        redirect_to edit_user_profile_path(@user,@profile)
+        #redirect_to edit_user_profile_path(@user,@profile)
+        redirect_to reservation_index_path
       end
     rescue ActiveRecord::RecordInvalid,  Exception => exception
       flash[:warning] = "#{exception.class}: #{exception.message}"
