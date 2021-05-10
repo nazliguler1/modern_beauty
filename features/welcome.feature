@@ -5,10 +5,10 @@ Feature: Display welcome page
     So that I can have a better experience when visiting the website
     
 Scenario: User sees the welcome message
-  When I go to the home page
+  When I go to the landing page
   Then I should see the welcome message
   
 Scenario: User clicks on about link
-  Given I am on the home page
+  Given I am on the landing page
   When I follow "About"
   Then I should be on the about page

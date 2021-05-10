@@ -7,10 +7,10 @@ module NavigationHelpers
   def path_to(page_name)
     case page_name
 
-    when /^the home page$/
+    when /^the landing page$/
       root_path
 
-    when /^the Modern Beauty home page$/
+    when /^the Modern Beauty services list page$/
       reservation_index_path
       
    # when /^the about page$/
