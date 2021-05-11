@@ -13,13 +13,12 @@
       %main#main
         = yield
         
-    %footer{:class => "footer mt-auto py-5 bg-white"}
-      %div{:class => "container"}
-        %p{:class => "footer-text"}
-          =link_to "Home", root_path
-          |
-          =link_to "About", about_path
-          |
-          =link_to "Services", reservation_index_path
-          - unless @action == 'login'
-            = render "layouts/footer"
+    .footer
+      =link_to "Home", root_path
+      |
+      =link_to "About", about_path
+      |
+      =link_to "Services", reservation_index_path
+        - unless @action == 'login'
+        = render "layouts/footer"
+          
