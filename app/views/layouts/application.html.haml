@@ -6,7 +6,7 @@
     = stylesheet_link_tag 'application', 'media' => 'all'
     = javascript_include_tag 'application'
     = csrf_meta_tags
-    %nav.navbar.navbar-expand-lg.bg-dark.text-white.mb-3
+    %nav.navbar.navbar-light{:style => "background-color: #fdab9f;"}
       %h1.title Modern Beauty
     .container
       = render 'layouts/flash'
