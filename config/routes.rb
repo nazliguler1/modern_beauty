@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   
   get 'welcome/index', :as => :welcome_index
   get 'reservation/index', :as => :reservation_index
+  get 'service/index', :as => :service_index
   get 'about' => 'welcome#about'
 
   # Example of regular route:

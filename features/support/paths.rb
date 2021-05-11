@@ -11,7 +11,7 @@ module NavigationHelpers
       root_path
 
     when /^the Modern Beauty services list page$/
-      reservation_index_path
+      service_index_path
       
    # when /^the about page$/
    #   welcome_about_path

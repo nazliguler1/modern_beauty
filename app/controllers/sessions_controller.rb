@@ -26,7 +26,7 @@ class SessionsController < ApplicationController
         flash[:notice] = message
         @profile = @user.create_profile
         #redirect_to edit_user_profile_path(@user,@profile)
-        redirect_to reservation_index_path
+        redirect_to service_index_path
       end
     rescue ActiveRecord::RecordInvalid,  Exception => exception
       flash[:warning] = "#{exception.class}: #{exception.message}"

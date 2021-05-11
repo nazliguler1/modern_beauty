@@ -1,3 +1,4 @@
+# features/services_list.feature
 Feature: Display services list
     As a user
     So that I can clearly see what providers are available

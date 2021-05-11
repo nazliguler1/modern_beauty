@@ -85,7 +85,7 @@ RSpec.describe SessionsController, type: :controller do
           end
           it 'redirects to the services list page' do
             post :create, provider: :github
-            expect(response). to redirect_to(reservation_index_path)
+            expect(response). to redirect_to(service_index_path)
           #it 'redirects to the edit profile page' do
           #  post :create, provider: :github  
           #  expect(response).to redirect_to(edit_user_profile_path(user_id: 1, id: id2))       
