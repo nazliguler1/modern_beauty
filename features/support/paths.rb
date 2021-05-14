@@ -11,7 +11,7 @@ module NavigationHelpers
       root_path
 
     when /^the Modern Beauty services list page$/
-      service_index_path
+      services_path
       
     when /^the Modern Beauty reservations page$/
       reservation_index_path
@@ -20,7 +20,7 @@ module NavigationHelpers
    #   welcome_about_path
       
     when /^the Modern Beauty landing page$/
-      welcome_index_path
+      welcome_landing_path
 
     when /^the RottenPotatoes edit Profile Path for "([^"]*)"$/
       edit_user_profile_path(1, 2)

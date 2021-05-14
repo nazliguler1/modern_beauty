@@ -1,8 +1,10 @@
 FactoryGirl.define do
   factory :reservation do
-    tutor "MyString"
+    name "MyString"
+    category "MyString"
     location "MyString"
-    service "MyString"
+    rating "MyString"
+    price "MyString"
     date "2021-05-01 02:55:05"
     user "MyString"
   end

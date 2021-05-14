@@ -38,8 +38,10 @@ ActiveRecord::Schema.define(version: 20210511174412) do
 
   create_table "reservations", force: :cascade do |t|
     t.string   "name"
+    t.string   "category"
     t.string   "location"
-    t.string   "service"
+    t.string   "rating"
+    t.string   "price"
     t.datetime "date"
     t.string   "user"
     t.datetime "created_at", null: false

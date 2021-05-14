@@ -4,8 +4,8 @@ class CreateServices < ActiveRecord::Migration
       t.string :name
       t.string :category
       t.string :location
-      t.integer :rating
-      t.integer :price
+      t.string :rating
+      t.string :price
 
       t.timestamps null: false
     end
