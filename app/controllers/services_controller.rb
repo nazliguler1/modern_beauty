@@ -2,7 +2,7 @@ class ServicesController < ApplicationController
   before_action :set_service, only: [:show, :edit, :update, :destroy]
   
   def index
-    @service = Service.all
+    @services = Service.all
   end
   
   def show
@@ -42,8 +42,8 @@ class ServicesController < ApplicationController
   def destroy
     @service = Service.find(params[:id])
     @service.destroy
-    flash[:notice] = "'#{@service.name}' deleted"
-    redirect_to services_index_path
+    flash[:notice] = "'#{@service.name}' deleted."
+    redirect_to services_path
   
   end
   

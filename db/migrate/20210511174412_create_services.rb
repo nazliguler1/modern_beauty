@@ -6,7 +6,7 @@ class CreateServices < ActiveRecord::Migration
       t.string :location
       t.string :rating
       t.string :price
-
+      
       t.timestamps null: false
     end
   end

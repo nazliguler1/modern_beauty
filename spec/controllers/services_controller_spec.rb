@@ -10,40 +10,95 @@ RSpec.describe ServicesController, type: :controller do
     @current_user = @user
   end
   
-  let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
-  }
-
-  let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
-  }
-  
-  let(:valid_session) { {} }
-  
-  describe "GET #index" do
-    it "returns http success" do
+  describe "#index" do
+    
+    it 'retrieves all of the services' do  
+      get :index
+      expect(assigns(:services)).to eq(Service.all)
+    end
+    
+    it 'renders index template' do
+      get :index
+      expect(response).to render_template('index')
+    end
+    
+    it 'returns http success' do
       get :index
       expect(response).to have_http_status(:success)
     end
+    
   end
 
-  describe "GET #show" do
+  describe "#show" do
     let(:id1) {'1'}
-    it "returns http success" do
-      get :show, :id=>id1
+    let(:service) {instance_double('Service', name: 'Service1')}
+
+    it 'retrieves the service' do
+      expect(Service).to receive(:find).and_return(service)
+      get :show, id: id1
+
+    end
+
+    it 'renders show template' do
+      allow(Service).to receive(:find).and_return(service)
+      get :show, id: id1
+      expect(response).to render_template('show')
+    end
+    
+    it 'makes the movie available to the template' do
+      allow(Service).to receive(:find).and_return(service)
+      get :show, id: id1 
+      expect(assigns(:service)).to eq(service)
+    end
+    
+     it 'makes the service available to the template' do
+      allow(Service).to receive(:find).and_return(service)
+      get :show, id: id1 
+      expect(assigns(:service)).to eq(service)
+    end
+    
+    it 'returns http success' do
+      get :show, id: id1
       expect(response).to have_http_status(:success)
     end
   end
 
-  describe "GET #new" do
-    it "returns http success" do
+  describe "#new" do
+    let(:id1) {'1'}
+    let(:service) {instance_double('Service', name: 'Service1')}
+    
+    it 'creates an instance of the service model' do
+      get :new
+      expect(assigns[:service]).to be_instance_of(Service)
+    end
+    
+    it 'selects the new template for rendering' do
+      allow(Service).to receive(:find).and_return(service)
+      get :new, id: id1
+      expect(response).to render_template(:new)
+    end
+    
+    it 'returns http success' do
       get :new
       expect(response).to have_http_status(:success)
     end
   end
 
-  describe "GET #edit" do
+  describe "#edit" do
     let(:id1) {'1'}
+    let(:service) {instance_double('Service', name: 'Service1')}
+    
+    it 'retrieves the service' do
+      expect(Service).to receive(:find).and_return(service)
+      get :edit, id: id1
+    end
+    
+    it 'renders the edit template' do
+      allow(Service).to receive(:find).and_return(service)
+      get :edit, id: id1
+      expect(response).to render_template('edit')
+    end
+
     it "returns http success" do
       get :edit, :id=>id1
       expect(response).to have_http_status(:success)
@@ -51,12 +106,35 @@ RSpec.describe ServicesController, type: :controller do
   end
   
   describe "DELETE #destroy" do
-    it "destroys the requested profile" do
-      service = Service.create! valid_attributes
-      expect {
-        delete :destroy, {:id => service.to_param}, valid_session
-      }.to change(Service, :count).by(-1)
+    let(:id1) {'1'}
+    let(:service) {instance_double('Service', name: 'Service1')}
+    
+    it 'retrieves the service' do
+      expect(Service).to receive(:find).and_return(service)
+      allow(service).to receive(:destroy)
+      delete :destroy, :id => id1
     end
+    
+    it 'deletes the service' do
+      allow(Service).to receive(:find).and_return(service)
+      expect(service).to receive(:destroy)
+      delete :destroy, :id => id1
+    end
+    
+    it 'sets the flash message' do
+      allow(Service).to receive(:find).and_return(service)
+      allow(service).to receive(:destroy)
+      delete :destroy, :id => id1
+      expect(flash[:notice]).to match(/^\'[^']*\' deleted.$/)  
+    end
+    
+    it 'Redirects to the movies page' do
+      allow(Service).to receive(:find).and_return(service)
+      allow(service).to receive(:destroy)
+      delete :destroy, :id => id1
+      expect(response).to redirect_to(services_path)
+    end
+    
   end
   
 end

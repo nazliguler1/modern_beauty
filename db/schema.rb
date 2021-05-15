@@ -52,8 +52,8 @@ ActiveRecord::Schema.define(version: 20210511174412) do
     t.string   "name"
     t.string   "category"
     t.string   "location"
-    t.integer  "rating"
-    t.integer  "price"
+    t.string   "rating"
+    t.string   "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

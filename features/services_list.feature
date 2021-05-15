@@ -3,9 +3,8 @@ Feature: Display services list
     As a user
     So that I can clearly see what providers are available
     I want to be able to see a list of beauty services  
-    
-    
-Background: authorization and user in database
+      
+Background: authorization and user in database  
 
   Given the following authorizations exist:
   | provider|uid    |user_id|

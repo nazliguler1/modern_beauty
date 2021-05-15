@@ -21,9 +21,16 @@ module NavigationHelpers
       
     when /^the Modern Beauty landing page$/
       welcome_landing_path
+      
+    when /^the show service page for "([^"]*)"$/
+      service_path(1)
+      
+    when /^the edit service page for "([^"]*)"$/
+      edit_service_path(1, 2)
 
-    when /^the RottenPotatoes edit Profile Path for "([^"]*)"$/
+    when /^the Modern Beauty edit Profile Path for "([^"]*)"$/
       edit_user_profile_path(1, 2)
+    
     else
       begin
         page_name =~ /^the (.*) page$/

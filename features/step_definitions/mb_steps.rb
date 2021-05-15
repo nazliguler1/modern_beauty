@@ -18,6 +18,12 @@ Given /the following users exist/ do |users_table|
   end 
 end
 
+Given /the following services exist/ do |services_table|
+  services_table.hashes.each do |service|
+    Service.create service
+  end 
+end
+
 Given /the following authorizations exist/ do |authorizations_table|
   authorizations_table.hashes.each do |authorization|
     Authorization.create! authorization

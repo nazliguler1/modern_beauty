@@ -56,14 +56,14 @@
 %table{:style => "border:1px solid black; width:100%;"}
   %thead Services Data 
   %tbody
-    - @service.each do |service|
+    - @services.each do |service|
       %tr
         %th{:style => "border:2px solid black;"}
           = service.name
         %th{:style => "border:2px solid black;"}
           = link_to 'Edit Service', edit_service_path(service)
         %th{:style => "border:2px solid black;"}
-          = link_to 'More info', services
+          = link_to 'More info', service
   
   
 %p  
