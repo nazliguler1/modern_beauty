@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   
-  resources :reservation
+  #resources :reservations
+  resources :services
   resources :profiles
+
   match '/auth/:provider/callback', :to => 'sessions#create', :via => [:get, :post]
   match 'auth/failure', :to => 'sessions#failure', :via => [:get, :post]
   match 'sessions/destroy', :as => 'logout', :via => [:get, :post]
@@ -16,10 +18,16 @@ Rails.application.routes.draw do
   end
 
   # You can have the root of your site routed with "root"
-  root 'welcome#index'
+  root 'welcome#landing'
   
-  get 'welcome/index', :as => :welcome_index
-  #get 'reservation/index', :as => :reservation_index
+  get 'welcome/landing', :as => :welcome_landing
+  get 'reservation/index', :as => :reservation_index
+ # get 'service/show'
+ # get 'service/edit'
+ # get 'service/index', :as => :service_index
+ # get 'service/new', :as => :service_new
+ # get 'service/show', :as => :service_show
+ # get 'service/edit', :as => :service_edit
   get 'about' => 'welcome#about'
 
   # Example of regular route:

@@ -7,20 +7,30 @@ module NavigationHelpers
   def path_to(page_name)
     case page_name
 
-    when /^the home page$/
+    when /^the landing page$/
       root_path
 
-    when /^the Modern Beauty home page$/
+    when /^the Modern Beauty services list page$/
+      services_path
+      
+    when /^the Modern Beauty reservations page$/
       reservation_index_path
       
    # when /^the about page$/
    #   welcome_about_path
       
     when /^the Modern Beauty landing page$/
-      welcome_index_path
+      welcome_landing_path
+      
+    when /^the show service page for "([^"]*)"$/
+      service_path(1)
+      
+    when /^the edit service page for "([^"]*)"$/
+      edit_service_path(1, 2)
 
-    when /^the RottenPotatoes edit Profile Path for "([^"]*)"$/
+    when /^the Modern Beauty edit Profile Path for "([^"]*)"$/
       edit_user_profile_path(1, 2)
+    
     else
       begin
         page_name =~ /^the (.*) page$/

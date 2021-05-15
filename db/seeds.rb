@@ -11,3 +11,10 @@ profiles = [{:primary_language => 'English', :secondary_language => 'I', :favori
 profiles.each do |profile|
   Profile.create!(profile)
 end
+
+services = [{:name => 'BU: Be You', :category => 'Beauty Salon',:location=> '123 Road St. Binghamton, NY', :rating => '4.0', :price=>'$$'},      
+      ]
+
+services.each do |service|
+    Service.create!(service)
+end

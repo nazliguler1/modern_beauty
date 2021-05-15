@@ -19,6 +19,6 @@ class ApplicationController < ActionController::Base
   end
   
   def keep_out_unless_logged_in
-    redirect to welcome_index_path unless (!!current_user)
+    redirect to welcome_landing_path unless (!!current_user)
   end 
 end

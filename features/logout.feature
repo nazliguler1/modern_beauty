@@ -21,4 +21,3 @@ Scenario: logout
   When I press "Log Out"
   Then I will see "Tester SUNY has logged out."  
   And I am on the Modern Beauty landing page
-  #And I will see "Instructions"

@@ -18,6 +18,12 @@ Given /the following users exist/ do |users_table|
   end 
 end
 
+Given /the following services exist/ do |services_table|
+  services_table.hashes.each do |service|
+    Service.create service
+  end 
+end
+
 Given /the following authorizations exist/ do |authorizations_table|
   authorizations_table.hashes.each do |authorization|
     Authorization.create! authorization
@@ -29,12 +35,10 @@ end
  end
 
 
-# features/step_definitions/movie_steps.rb
-
 Given /I am logged into Modern Beauty/ do
   steps %Q{
     Given I am on the Modern Beauty landing page   
     And I press "Register or Login with GitHub"
-    And I am on the Modern Beauty home page
+    And I am on the Modern Beauty services list page
     }
 end

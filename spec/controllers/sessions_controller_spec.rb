@@ -38,9 +38,9 @@ RSpec.describe SessionsController, type: :controller do
             post :create, provider: :github
             expect(flash[:notice]).to match(/^Welcome back #{user1.name}! You have logged in via #{auth1.provider}.$/)
           end
-          it 'redirects to the home page' do
+          it 'redirects to the services list page' do
             post :create, provider: :github
-            expect(response).to redirect_to(reservation_index_path) 
+            expect(response).to redirect_to(services_path) 
           end
         end
       end
@@ -83,6 +83,9 @@ RSpec.describe SessionsController, type: :controller do
             post :create, provider: :github
             expect(assigns(:profile)).to have_attributes(id: id2, user_id: 1)
           end
+          #it 'redirects to the services list page' do
+           # post :create, provider: :github
+            #expect(response). to redirect_to(service_index_path)
           it 'redirects to the edit profile page' do
             post :create, provider: :github  
             expect(response).to redirect_to(edit_user_profile_path(user_id: 1, id: id2))       
