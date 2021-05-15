@@ -22,22 +22,11 @@ RSpec.describe ServicesController, type: :controller do
       expect(response).to render_template('index')
     end
     
-    it 'returns http success' do
-      get :index
-      expect(response).to have_http_status(:success)
-    end
-    
   end
 
   describe "#show" do
     let(:id1) {'1'}
     let(:service) {instance_double('Service', name: 'Service1')}
-
-    it 'retrieves the service' do
-      expect(Service).to receive(:find).and_return(service)
-      get :show, id: id1
-
-    end
 
     it 'renders show template' do
       allow(Service).to receive(:find).and_return(service)
@@ -57,10 +46,6 @@ RSpec.describe ServicesController, type: :controller do
       expect(assigns(:service)).to eq(service)
     end
     
-    it 'returns http success' do
-      get :show, id: id1
-      expect(response).to have_http_status(:success)
-    end
   end
 
   describe "#new" do
@@ -77,44 +62,32 @@ RSpec.describe ServicesController, type: :controller do
       get :new, id: id1
       expect(response).to render_template(:new)
     end
-    
-    it 'returns http success' do
-      get :new
-      expect(response).to have_http_status(:success)
-    end
+
   end
 
   describe "#edit" do
     let(:id1) {'1'}
-    let(:service) {instance_double('Service', name: 'Service1')}
-    
-    it 'retrieves the service' do
-      expect(Service).to receive(:find).and_return(service)
-      get :edit, id: id1
-    end
+    let(:service) {instance_double('Service', name: 'Service1')}  
     
     it 'renders the edit template' do
       allow(Service).to receive(:find).and_return(service)
       get :edit, id: id1
       expect(response).to render_template('edit')
     end
-
-    it "returns http success" do
-      get :edit, :id=>id1
-      expect(response).to have_http_status(:success)
-    end
+    
   end
   
   describe "DELETE #destroy" do
     let(:id1) {'1'}
     let(:service) {instance_double('Service', name: 'Service1')}
-    
+ 
     it 'retrieves the service' do
       expect(Service).to receive(:find).and_return(service)
+
       allow(service).to receive(:destroy)
       delete :destroy, :id => id1
     end
-    
+
     it 'deletes the service' do
       allow(Service).to receive(:find).and_return(service)
       expect(service).to receive(:destroy)

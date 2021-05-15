@@ -6,8 +6,7 @@ class ServicesController < ApplicationController
   end
   
   def show
-    id = params[:id]
-    @service = Service.find(id)
+
   end
   
   def new
@@ -15,7 +14,7 @@ class ServicesController < ApplicationController
   end
   
   def edit
-    @service = Service.find(params[:id])
+    
   end
   
   def create
@@ -30,17 +29,14 @@ class ServicesController < ApplicationController
   end
   
   def update
-    @service = Service.find(params[:id])
-    
     if @service.update(service_params)
       redirect_to @service, notice: 'Service was successfully updated.'
     else
-      render 'edit'
+      render :edit
     end
   end
   
   def destroy
-    @service = Service.find(params[:id])
     @service.destroy
     flash[:notice] = "'#{@service.name}' deleted."
     redirect_to services_path
