@@ -1,58 +1,32 @@
 %h1 Modern Beauty - Services
 
 %table{:style => "border:1px solid black; width:100%;"}
-  %tr
-    %th{:style => "border:2px solid black; height: 70px; text-align:center;"} Name
-    %th{:style => "border:2px solid black; text-align:center;"} Category
-    %th{:style => "border:2px solid black; text-align:center;"} Location
-    %th{:style => "border:2px solid black; text-align:center;"} Rating
-    %th{:style => "border:2px solid black; text-align:center;"} Price
-    %th{:style => "border:2px solid black; text-align:center;"} Reservation
+  %thead{:style => "bold"} Services
+  %tbody
+    %tr
+      %th{:style => "border:2px solid black; height: 70px; text-align:center;"} Name
+      %th{:style => "border:2px solid black; text-align:center;"} Category
+      %th{:style => "border:2px solid black; text-align:center;"} Location
+      %th{:style => "border:2px solid black; text-align:center;"} Rating
+      %th{:style => "border:2px solid black; text-align:center;"} Price
+      %th{:style => "border:2px solid black; text-align:center;"} Reservation
+  
+  - @services.each do |service|
+    %tr
+      %td{:style => "border:2px solid black; text-align:center;"}
+        = service.name
+      %td{:style => "border:2px solid black; text-align:center;"}
+        = service.category
+      %td{:style => "border:2px solid black; text-align:center;"}
+        = service.location
+      %td{:style => "border:2px solid black; text-align:center;"}
+        = service.rating
+      %td{:style => "border:2px solid black; text-align:center;"}
+        = service.price
+      %td{:style => "border:2px solid black; text-align:center;"} Make Reservation
     
-  %tr
-    %td{:style => "border:2px solid black; text-align:center;"} Table cell 
-    %td{:style => "border:2px solid black; text-align:center;"} Table cell 
-    %td{:style => "border:2px solid black; text-align:center;"} Table cell 
-    %td{:style => "border:2px solid black; text-align:center;"} Table cell 
-    %td{:style => "border:2px solid black; text-align:center;"} Table cell 
-    %td{:style => "text-align:center;" , :type => "button", :class=> "btn btn-outline-dark"} Make Reservation
-  %tr
-    %td{:style => "border:2px solid black; text-align:center;"} Table cell 1
-    %td{:style => "border:2px solid black; text-align:center;"} Table cell 2
-    %td{:style => "border:2px solid black; text-align:center;"} Table cell 1
-    %td{:style => "border:2px solid black; text-align:center;"} Table cell 2
-    %td{:style => "border:2px solid black; text-align:center;"} Table cell 2
-    %td{:style => "text-align:center;" , :type => "button", :class=> "btn btn-outline-dark"} Make Reservation
-  %tr
-    %td{:style => "border:2px solid black; text-align:center;"} Table cell 1
-    %td{:style => "border:2px solid black; text-align:center;"} Table cell 2
-    %td{:style => "border:2px solid black; text-align:center;"} Table cell 1
-    %td{:style => "border:2px solid black; text-align:center;"} Table cell 2
-    %td{:style => "border:2px solid black; text-align:center;"} Table cell 2
-    %td{:style => "text-align:center;" , :type => "button", :class=> "btn btn-outline-dark"} Make Reservation
-  %tr
-    %td{:style => "border:2px solid black; text-align:center;"} Table cell 1
-    %td{:style => "border:2px solid black; text-align:center;"} Table cell 2
-    %td{:style => "border:2px solid black; text-align:center;"} Table cell 1
-    %td{:style => "border:2px solid black; text-align:center;"} Table cell 2
-    %td{:style => "border:2px solid black; text-align:center;"} Table cell 2
-    %td{:style => "text-align:center;" , :type => "button", :class=> "btn btn-outline-dark"} Make Reservation
-  %tr
-    %td{:style => "border:2px solid black; text-align:center;"} Table cell 1
-    %td{:style => "border:2px solid black; text-align:center;"} Table cell 2
-    %td{:style => "border:2px solid black; text-align:center;"} Table cell 1
-    %td{:style => "border:2px solid black; text-align:center;"} Table cell 2
-    %td{:style => "border:2px solid black; text-align:center;"} Table cell 2
-    %td{:style => "text-align:center;" , :type => "button", :class=> "btn btn-outline-dark"} Make Reservation
-  %tr
-    %td{:style => "border:2px solid black; text-align:center;"} Table cell 1
-    %td{:style => "border:2px solid black; text-align:center;"} Table cell 2
-    %td{:style => "border:2px solid black; text-align:center;"} Table cell 1
-    %td{:style => "border:2px solid black; text-align:center;"} Table cell 2
-    %td{:style => "border:2px solid black; text-align:center;"} Table cell 2
-    %td{:style => "text-align:center;" , :type => "button", :class=> "btn btn-outline-dark"} Make Reservation
     
-%p 
+%p
 %table{:style => "border:1px solid black; width:100%;"}
   %thead Services Data 
   %tbody
@@ -64,6 +38,8 @@
           = link_to 'Edit Service', edit_service_path(service)
         %th{:style => "border:2px solid black;"}
           = link_to 'More info', service
+        %th{:style => "border:2px solid black;"}
+          = link_to 'Delete', service_path(service), 'data-method' => 'delete', 'data-confirm' => 'Delete service?'
   
   
 %p  

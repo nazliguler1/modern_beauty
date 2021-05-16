@@ -14,11 +14,5 @@
         = yield
         
     .footer
-      =link_to "Home", root_path
-      |
-      =link_to "About", about_path
-      |
-      =link_to "Services", services_path
-        - unless @action == 'login'
-        = render "layouts/footer"
+      = render 'layouts/footer'
           

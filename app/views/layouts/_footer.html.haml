@@ -1,2 +1,10 @@
-%div
-= button_to "Log Out", logout_path, {class: "btn btn-primary"}
+%body
+=link_to "Home", root_path
+|
+=link_to "About", about_path
+|
+=link_to "Services", services_path
+
+
+- unless @action == 'login'
+  = button_to "Log Out", logout_path, {class: "btn btn-secondary"}
