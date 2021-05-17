@@ -1,0 +1,18 @@
+%h2 Edit Reservation
+= form_tag @reservation, :method => :put do |f|
+  = label :reservation, :name, 'Name', :class => 'col-form-label'
+  = text_field :reservation, :name, :class => 'form-control'
+  
+  = label :reservation, :category, 'Category', :class => 'col-form-label'
+  = text_field :reservation, :category, :class => 'form-control'
+  
+  = label :reservation, :location, 'Location', :class => 'col-form-label'
+  = text_field :reservation, :location, :class => 'form-control'
+  
+  = label :reservation, :rating, 'Rating', :class => 'col-form-label'
+  = text_field :reservation, :rating, :class => 'form-control'
+  
+  
+  %br
+  = submit_tag 'Update Reservation', :class => 'btn btn-primary'
+  = link_to 'Cancel', reservations_path, :class => 'btn btn-secondary'

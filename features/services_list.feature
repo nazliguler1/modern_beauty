@@ -18,4 +18,4 @@ Background: authorization and user in database
 Scenario: User sees the services list
   Given I am logged into Modern Beauty
   And I am on the Modern Beauty services list page
-  Then I should see "Modern Beauty - Services"
+  Then I should see "Services"

@@ -1,0 +1,26 @@
+%h2 #{@reservation.name}
+
+%ul#info
+  %li
+    %b Reservation:
+    = @reservation.id
+  %li
+    %b Category:
+    = @reservation.category
+    
+%h4 Details:
+
+%p
+  %b Location: 
+  =@reservation.location
+%p
+  %b Rating:
+  =@reservation.rating
+
+%p 
+= link_to 'Edit', edit_res_path_path(@reservation), :class => 'btn btn-primary'
+
+= link_to 'Delete', reservation_path(@reservation), 'data-method' => 'delete', 'data-confirm' => 'Delete service?', :class => 'btn btn-secondary'
+
+%p
+= link_to 'Back', reservations_path

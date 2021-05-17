@@ -1,7 +1,7 @@
-%h1 Modern Beauty - Services
+%h3 Services
 
 %table{:style => "border:1px solid black; width:100%;"}
-  %thead{:style => "bold"} Services
+  %thead
   %tbody
     %tr
       %th{:style => "border:2px solid black; height: 70px; text-align:center;"} Name
@@ -23,12 +23,13 @@
         = service.rating
       %td{:style => "border:2px solid black; text-align:center;"}
         = service.price
-      %td{:style => "border:2px solid black; text-align:center;"} Make Reservation
+      %td{:style => "border:2px solid black; text-align:center;"} 
+        = link_to 'Make Reservation', new_reservation_path
     
     
 %p
 %table{:style => "border:1px solid black; width:100%;"}
-  %thead Services Data 
+  %thead Services Data
   %tbody
     - @services.each do |service|
       %tr

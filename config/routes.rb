@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   
-  #resources :reservations
-  resources :services
-  resources :profiles
+  resources :profiles, :services, :reservations
+  
+
 
   match '/auth/:provider/callback', :to => 'sessions#create', :via => [:get, :post]
   match 'auth/failure', :to => 'sessions#failure', :via => [:get, :post]
@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   root 'welcome#landing'
   
   get 'welcome/landing', :as => :welcome_landing
-  get 'reservation/index', :as => :reservation_index
+ # get 'reservation/index', :as => :reservation_index
  # get 'service/show'
  # get 'service/edit'
  # get 'service/index', :as => :service_index

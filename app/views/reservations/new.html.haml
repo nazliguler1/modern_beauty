@@ -1,0 +1,21 @@
+%h2 Make New Reservation
+= form_tag reservations_path do
+  = label :service, :name, 'Name', :class => 'col-form-label'
+  = text_field :service, :name, :class => 'form-control'
+  
+  = label :service, :category, 'Category', :class => 'col-form-label'
+  = text_field :service, :category, :class => 'form-control'
+  
+  = label :service, :location, 'Location', :class => 'col-form-label'
+  = text_field :service, :location, :class => 'form-control'
+  
+  = label :service, :rating, 'Rating', :class => 'col-form-label'
+  = text_field :service, :rating, :class => 'form-control'
+  
+  = label :service, :price, 'Price', :class => 'col-form-label'
+  = select :service, :price, ['$','$$', '$$$', '$$$$'], {}, {:class => 'form-control col-1'}
+  
+  
+  %br
+  = submit_tag 'Add Service', :class => 'btn btn-primary'
+  = link_to 'Cancel', services_path, :class => 'btn btn-secondary'

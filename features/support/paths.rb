@@ -14,10 +14,7 @@ module NavigationHelpers
       services_path
       
     when /^the Modern Beauty reservations page$/
-      reservation_index_path
-      
-   # when /^the about page$/
-   #   welcome_about_path
+      reservations_path
       
     when /^the Modern Beauty landing page$/
       welcome_landing_path

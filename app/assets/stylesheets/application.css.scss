@@ -16,6 +16,33 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+h1 {
+	padding: 20px;
+	font-size: 75px;
+	margin: 6px auto;
+	text-align: center;
+	font-style: italic;
+	font-family: "Brush Script MT";
+  text-shadow: 0 1px 0px #000;
+}
+
+h3 {
+	padding: 30px;
+	font-size: 25px;
+	margin: 6px auto;
+	text-align: center;
+	color: #dea5a5;
+	font-style: italic;
+	font-family: 'Dancing Script', cursive;
+}
+
+table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  border: 3px solid purple;
+}
+
 .footer {
   //body
   position: absolute;
@@ -31,5 +58,5 @@
   
   //font
   font-family: monospace;
-  text-shadow: 0 1px 0px #fff;
+  text-shadow: 0 1px 0px #000;
 }

@@ -1,8 +1,8 @@
-class ReservationController < ApplicationController
+class ReservationsController < ApplicationController
   before_action :set_reservation, only: [:show, :edit, :update, :destroy]
 
   def index
-    @reservation = Reservation.all	
+    @reservations = Reservation.all	
   end
 
   def show
@@ -11,10 +11,9 @@ class ReservationController < ApplicationController
   end
 
   def new
-		@reservation= Reservation.create!(:time_in=>DateTime.now())	
 	
 		flash[:notice] = "You have made a reservation"
-		redirect_to reservation_index_path(@reservation)
+		redirect_to reservations_path(@reservation)
   end
 
   def edit
