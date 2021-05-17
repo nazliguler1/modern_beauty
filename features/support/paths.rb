@@ -9,6 +9,9 @@ module NavigationHelpers
 
     when /^the landing page$/
       root_path
+      
+    when /^the home page$/
+      home_path
 
     when /^the Modern Beauty services list page$/
       services_path

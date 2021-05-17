@@ -13,9 +13,10 @@
   = text_field :service, :rating, :class => 'form-control'
   
   = label :service, :price, 'Price', :class => 'col-form-label'
-  = select :service, :price, ['$','$$', '$$$', '$$$$'], {}, {:class => 'form-control col-1'}
+  = select :service, :price, ['$','$$', '$$$', '$$$$'], {}, {:class => 'form-control col-3'}
   
   
   %br
   = submit_tag 'Add Service', :class => 'btn btn-primary'
+  %br
   = link_to 'Cancel', services_path, :class => 'btn btn-secondary'

@@ -24,8 +24,6 @@ Scenario: User selects to make reservation
   Given I am logged into Modern Beauty
   And I am on the Modern Beauty services list page
   And I follow "Make Reservation"
-  Then I should be on the Modern Beauty reservations page
-  
-#Scenario: User makes reservation
-#  Given I am on the Reservation page
-  
+  Then I should see "Make New Reservation"
+  And I follow "Cancel"
+  Then I should be on the Modern Beauty services list page
