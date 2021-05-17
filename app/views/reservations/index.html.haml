@@ -1,5 +1,4 @@
 %h3 Reservations
-= link_to 'Back', url_for(:back)
 
 %h4 Your Reservations:
 
@@ -29,4 +28,6 @@
         = link_to 'Delete', reservation_path(reservation), 'data-method' => 'delete', 'data-confirm' => 'Delete service?'
         
 
-    
+%br
+%p
+  = link_to 'Back', url_for(:back), {class: "btn btn-secondary"}

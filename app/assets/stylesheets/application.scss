@@ -16,6 +16,20 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+body {
+  background-color: #ffeded;
+}
+
+.container {
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+  display: flex;
+	flex-direction: column;
+	align-items: center;
+  padding: 15px;
+}
+
 h1 {
 	padding: 20px;
 	font-size: 75px;
@@ -23,7 +37,19 @@ h1 {
 	text-align: center;
 	font-style: italic;
 	font-family: "Brush Script MT";
-  text-shadow: 0 1px 0px #000;
+  color: #d88fd8;
+  text-shadow: 0 2px 2px #000;
+}
+
+h2 {
+	padding: 30px;
+	font-size: 45px;
+	margin: 6px auto;
+	text-align: center;
+	color: #d88fd8;
+	font-style: italic;
+	font-family: 'Dancing Script', cursive;
+  text-shadow: 0 1px 1px #000;
 }
 
 h3 {
@@ -31,9 +57,10 @@ h3 {
 	font-size: 25px;
 	margin: 6px auto;
 	text-align: center;
-	color: #dea5a5;
+	color: #d88fd8;
 	font-style: italic;
 	font-family: 'Dancing Script', cursive;
+  text-shadow: 0 1px 1px #000;
 }
 
 table {
@@ -60,4 +87,15 @@ table {
   //font
   font-family: monospace;
   text-shadow: 0 1px 0px #000;
+}
+
+.logo {
+	width: 280px;
+	height: 280px;
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }

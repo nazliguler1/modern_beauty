@@ -28,6 +28,7 @@ Rails.application.routes.draw do
  # get 'service/new', :as => :service_new
  # get 'service/show', :as => :service_show
  # get 'service/edit', :as => :service_edit
+  get 'home' => 'welcome#home'
   get 'about' => 'welcome#about'
 
   # Example of regular route:
