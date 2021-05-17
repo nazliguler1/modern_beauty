@@ -4,21 +4,21 @@
   %li
     %b Reservation:
     = @reservation.id
-  %li
-    %b Category:
-    = @reservation.category
+//  %li
+//    %b Category:
+//    = @service.category
     
 %h4 Details:
 
 %p
-  %b Location: 
-  =@reservation.location
+//  %b Location: 
+//  =@service.location
 %p
-  %b Rating:
-  =@reservation.rating
+  %b Date:
+  =@reservation.date
 
 %p 
-= link_to 'Edit', edit_res_path_path(@reservation), :class => 'btn btn-primary'
+= link_to 'Edit', edit_reservation_path(@reservation), :class => 'btn btn-primary'
 
 = link_to 'Delete', reservation_path(@reservation), 'data-method' => 'delete', 'data-confirm' => 'Delete service?', :class => 'btn btn-secondary'
 

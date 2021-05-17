@@ -1,34 +1,34 @@
 %h3 Services
 
-%table{:style => "border:1px solid black; width:100%;"}
+%table{:style => "border:2px solid purple; width:100%;"}
   %thead
   %tbody
     %tr
-      %th{:style => "border:2px solid black; height: 70px; text-align:center;"} Name
-      %th{:style => "border:2px solid black; text-align:center;"} Category
-      %th{:style => "border:2px solid black; text-align:center;"} Location
-      %th{:style => "border:2px solid black; text-align:center;"} Rating
-      %th{:style => "border:2px solid black; text-align:center;"} Price
-      %th{:style => "border:2px solid black; text-align:center;"} Reservation
+      %th{:style => "border:2px solid purple; height: 70px; text-align:center;"} Name
+      %th{:style => "border:2px solid purple; text-align:center;"} Category
+      %th{:style => "border:2px solid purple; text-align:center;"} Location
+      %th{:style => "border:2px solid purple; text-align:center;"} Rating
+      %th{:style => "border:2px solid purple; text-align:center;"} Price
+      %th{:style => "border:2px solid purple; text-align:center;"} Reservation
   
   - @services.each do |service|
     %tr
-      %td{:style => "border:2px solid black; text-align:center;"}
+      %td{:style => "border:2px solid purple; text-align:center;"}
         = service.name
-      %td{:style => "border:2px solid black; text-align:center;"}
+      %td{:style => "border:2px solid purple; text-align:center;"}
         = service.category
-      %td{:style => "border:2px solid black; text-align:center;"}
+      %td{:style => "border:2px solid purple; text-align:center;"}
         = service.location
-      %td{:style => "border:2px solid black; text-align:center;"}
+      %td{:style => "border:2px solid purple; text-align:center;"}
         = service.rating
-      %td{:style => "border:2px solid black; text-align:center;"}
+      %td{:style => "border:2px solid purple; text-align:center;"}
         = service.price
-      %td{:style => "border:2px solid black; text-align:center;"} 
+      %td{:style => "border:2px solid purple; text-align:center;"} 
         = link_to 'Make Reservation', new_reservation_path
     
     
 %p
-%table{:style => "border:1px solid black; width:100%;"}
+%table{:style => "border:2px solid black; width:100%;"}
   %thead Services Data
   %tbody
     - @services.each do |service|

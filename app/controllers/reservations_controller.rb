@@ -6,14 +6,11 @@ class ReservationsController < ApplicationController
   end
 
   def show
-		id = params[:id]
-    @reservation = Reservation.find(id)
+
   end
 
   def new
-	
-		flash[:notice] = "You have made a reservation"
-		redirect_to reservations_path(@reservation)
+    @reservation = Reservation.new	
   end
 
   def edit
@@ -26,12 +23,13 @@ class ReservationsController < ApplicationController
       redirect_to @reservation, notice: 'Reservation created.'
     else
       render :new
+      
     end
   end
 
   def update
     if @reservation.update(reservation_params)
-      redirect_to reservation_index_path, notice: 'Reservation updated.'
+      redirect_to reservation_path, notice: 'Reservation updated.'
     else
       render :edit
     end
@@ -39,7 +37,8 @@ class ReservationsController < ApplicationController
 
   def destroy
     @reservation.destroy
-    redirect_to services_index_path, notice: 'Reservation removed.'
+    flash[:notice] = "Reservation removed."
+    redirect_to services_path
   end
 
   private
@@ -49,6 +48,6 @@ class ReservationsController < ApplicationController
     end
 
     def reservation_params
-      params.require(:reservation).permit(:name, :category, :location, :rating, :price, :date, :user)
+      params.require(:reservation).permit(:name, :location, :date)
     end
 end

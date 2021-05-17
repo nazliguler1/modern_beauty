@@ -3,20 +3,30 @@
 
 %h4 Your Reservations:
 
-%table{:style => "border:1px solid black; width:100%;"}
-  %tr
-    %th{:style => "border:2px solid black; height: 70px; text-align:center;"} Name
-    %th{:style => "border:2px solid black; text-align:center;"} Category
-    %th{:style => "border:2px solid black; text-align:center;"} Location
-    %th{:style => "border:2px solid black; text-align:center;"} Rating
-    %th{:style => "border:2px solid black; text-align:center;"} Price
-    
-  
-  %tr
-    %td{:style => "border:2px solid black; text-align:center;"} Table cell 
-    %td{:style => "border:2px solid black; text-align:center;"} Table cell 
-    %td{:style => "border:2px solid black; text-align:center;"} Table cell 
-    %td{:style => "border:2px solid black; text-align:center;"} Table cell 
-    %td{:style => "border:2px solid black; text-align:center;"} Table cell
+%table{:style => "border:2px solid purple; width:100%;"}
+  %thead
+  %tbody
+    %tr
+      %th{:style => "border:2px solid purple; height: 70px; text-align:center;"} Name
+      %th{:style => "border:2px solid purple; text-align:center;"} Category
+      %th{:style => "border:2px solid purple; text-align:center;"} Location
+      %th{:style => "border:2px solid purple; text-align:center;"} Date
+      %th{:style => "border:2px solid purple; text-align:center;"} Manage
+
+  - @reservations.each do |reservation|
+    %tr
+      %td{:style => "border:2px solid purple; text-align:center;"}
+        = reservation.name
+      %td{:style => "border:2px solid purple; text-align:center;"}
+        = reservation.category
+      %td{:style => "border:2px solid purple; text-align:center;"}
+        = reservation.location
+      %td{:style => "border:2px solid purple; text-align:center;"}
+        = reservation.date
+      %td{:style => "border:2px solid purple; text-align:center;"}
+        = link_to 'Edit Reservation', edit_reservation_path(reservation)
+        %br -
+        = link_to 'Delete', reservation_path(reservation), 'data-method' => 'delete', 'data-confirm' => 'Delete service?'
+        
 
     
