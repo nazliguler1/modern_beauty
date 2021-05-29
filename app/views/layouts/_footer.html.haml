@@ -1,2 +1,6 @@
-%div
-= button_to "Log Out", logout_path, {class: "btn btn-primary"}
+- unless @action == 'login'
+  =link_to "Home", home_path
+  |
+  =link_to "About", about_path
+  %p
+  = button_to "Log Out", logout_path, {class: "btn btn-secondary"}

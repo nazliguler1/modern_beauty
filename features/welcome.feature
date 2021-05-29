@@ -9,6 +9,6 @@ Scenario: User sees the welcome message
   Then I should see the welcome message
   
 Scenario: User clicks on about link
-  Given I am on the landing page
+  Given I am on the home page
   When I follow "About"
   Then I should be on the about page

@@ -101,7 +101,7 @@ RSpec.describe ServicesController, type: :controller do
       expect(flash[:notice]).to match(/^\'[^']*\' deleted.$/)  
     end
     
-    it 'Redirects to the movies page' do
+    it 'Redirects to the services list page' do
       allow(Service).to receive(:find).and_return(service)
       allow(service).to receive(:destroy)
       delete :destroy, :id => id1

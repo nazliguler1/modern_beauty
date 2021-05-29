@@ -1,0 +1,15 @@
+%h2 Make New Reservation
+= form_tag reservations_path do
+  = label :reservation, :name, 'Name', :class => 'col-form-label'
+  = text_field :reservation, :name, :class => 'form-control'
+  
+  = label :reservation, :service_location, 'Location', :class => 'col-form-label'
+  = text_field :reservation, :service_location, :class => 'form-control'
+  
+  = label :reservation, :date, 'Date', :class => 'col-form-label'
+  = datetime_local_field :reservation, :date, :class => 'form-control'
+  
+  %br
+  = submit_tag 'Confirm', :class => 'btn btn-success'
+  %br
+  = link_to 'Cancel', services_path, :class => 'btn btn-secondary'

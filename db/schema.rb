@@ -38,15 +38,17 @@ ActiveRecord::Schema.define(version: 20210511174412) do
 
   create_table "reservations", force: :cascade do |t|
     t.string   "name"
-    t.string   "category"
-    t.string   "location"
-    t.string   "rating"
-    t.string   "price"
     t.datetime "date"
-    t.string   "user"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "service_name"
+    t.string   "service_location"
+    t.integer  "user_id"
+    t.integer  "service_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
+
+  add_index "reservations", ["service_id"], name: "index_reservations_on_service_id"
+  add_index "reservations", ["user_id"], name: "index_reservations_on_user_id"
 
   create_table "services", force: :cascade do |t|
     t.string   "name"

@@ -1,0 +1,107 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin: 0 0 100px;
+  background-color: #ffeded;
+}
+
+.container {
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+  display: flex;
+	flex-direction: column;
+	align-items: center;
+  padding: 15px;
+}
+
+h1 {
+	padding: 20px;
+	font-size: 75px;
+	margin: 6px auto;
+	text-align: center;
+	font-style: italic;
+	font-family: "Brush Script MT";
+  color: #d88fd8;
+  text-shadow: 0 2px 2px #000;
+}
+
+h2 {
+	padding: 30px;
+	font-size: 45px;
+	margin: 6px auto;
+	text-align: center;
+	color: #d88fd8;
+	font-style: italic;
+	font-family: 'Dancing Script', cursive;
+  text-shadow: 0 1px 1px #000;
+}
+
+h3 {
+	padding: 30px;
+	font-size: 25px;
+	margin: 6px auto;
+	text-align: center;
+	color: #d88fd8;
+	font-style: italic;
+	font-family: 'Dancing Script', cursive;
+  text-shadow: 0 1px 1px #000;
+}
+
+table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  border: 2px solid purple;
+}
+
+.footer {
+  //body
+  position: absolute;
+  //right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+  background-color: #dea5a5;
+  color: #fff;
+  padding: 25px 0;
+  text-align: center;
+  
+  //font
+  font-family: monospace;
+  text-shadow: 0 1px 0px #000;
+}
+
+.logo {
+	width: 280px;
+	height: 280px;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
