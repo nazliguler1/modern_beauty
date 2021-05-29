@@ -77,6 +77,21 @@ RSpec.describe ServicesController, type: :controller do
     
   end
   
+  describe "#create" do
+    let(:id1) {'1'}
+    let(:params) {{name: 'BU: Be You', category: 'Beauty Salon', location: '123 Road St. Binghamton, NY', rating: '4.0', price: '$$'}}
+    let(:service) {instance_double('Service', name: 'Service1')}
+    
+    context "with valid params" do
+      it 'redirect to services list page' do
+        post :create, service: params
+        expect(response).to redirect_to(Service.last)
+      end
+    end
+
+  end
+  
+  
   describe "DELETE #destroy" do
     let(:id1) {'1'}
     let(:service) {instance_double('Service', name: 'Service1')}

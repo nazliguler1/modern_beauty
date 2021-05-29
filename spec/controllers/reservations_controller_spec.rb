@@ -76,6 +76,20 @@ RSpec.describe ReservationsController, type: :controller do
     
   end
   
+  describe "#create" do
+    let(:id1) {'1'}
+    let(:params) {{name: 'BU: Be You', location: '123 Road St. Binghamton, NY', date: ''}}
+    let(:reservation) {instance_double('Reservation', name: 'Reservation1')}
+    
+    context "with valid params" do
+      it 'redirect to reservations list page' do
+        post :create, reservation: params
+        expect(response).to redirect_to(Reservation.last)
+      end
+    end
+
+  end
+  
   describe "DELETE #destroy" do
     let(:id1) {'1'}
     let(:reservation) {instance_double('Reservation', name: 'Reservation1')}

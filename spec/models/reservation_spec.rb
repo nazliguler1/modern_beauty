@@ -12,11 +12,6 @@ RSpec.describe Reservation, type: :model do
 		reservation = Reservation.new(name: nil)
 		!expect(reservation).to be_valid
 	end
- 
-  it "is invalid if user does not exist" do
-		reservation = Reservation.new(user: nil)
-		!expect(reservation).to be_valid
-	end
   
   it "is invalid if no date provided" do
 		reservation = Reservation.new(date: nil)
