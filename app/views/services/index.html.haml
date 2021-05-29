@@ -1,4 +1,7 @@
 %h3 Services
+%p
+  = link_to 'My Reservations', reservations_path, {class: "btn btn-primary"}
+%br
 
 %table{:style => "border:2px solid purple; width:100%;"}
   %thead
@@ -24,22 +27,23 @@
       %td{:style => "border:2px solid purple; text-align:center;"}
         = service.price
       %td{:style => "border:2px solid purple; text-align:center;"} 
-        = link_to 'Make Reservation', new_reservation_path
-    
-    
+        = link_to 'Make Reservation', new_reservation_path(service), {class: "btn btn-danger"}
+
+%br
 %p
-%table{:style => "border:2px solid black; width:100%;"}
-  %thead Services Data
+%hr
+%table{:style => "border:1px solid black; width:100%;"}
+  %b Services Data
   %tbody
     - @services.each do |service|
       %tr
-        %th{:style => "border:2px solid black;"}
+        %th{:style => "border:1px solid black;"}
           = service.name
-        %th{:style => "border:2px solid black;"}
+        %th{:style => "border:1px solid black;"}
           = link_to 'Edit Service', edit_service_path(service)
-        %th{:style => "border:2px solid black;"}
+        %th{:style => "border:1px solid black;"}
           = link_to 'More info', service
-        %th{:style => "border:2px solid black;"}
+        %th{:style => "border:1px solid black;"}
           = link_to 'Delete', service_path(service), 'data-method' => 'delete', 'data-confirm' => 'Delete service?'
   
   

@@ -7,7 +7,6 @@
   %tbody
     %tr
       %th{:style => "border:2px solid purple; height: 70px; text-align:center;"} Name
-      %th{:style => "border:2px solid purple; text-align:center;"} Category
       %th{:style => "border:2px solid purple; text-align:center;"} Location
       %th{:style => "border:2px solid purple; text-align:center;"} Date
       %th{:style => "border:2px solid purple; text-align:center;"} Manage
@@ -17,9 +16,7 @@
       %td{:style => "border:2px solid purple; text-align:center;"}
         = reservation.name
       %td{:style => "border:2px solid purple; text-align:center;"}
-        = reservation.category
-      %td{:style => "border:2px solid purple; text-align:center;"}
-        = reservation.location
+        = reservation.service_location
       %td{:style => "border:2px solid purple; text-align:center;"}
         = reservation.date
       %td{:style => "border:2px solid purple; text-align:center;"}
@@ -30,4 +27,4 @@
 
 %br
 %p
-  = link_to 'Back', url_for(:back), {class: "btn btn-secondary"}
+  = link_to 'Back to Services', services_path, {class: "btn btn-secondary"}

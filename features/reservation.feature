@@ -25,5 +25,3 @@ Scenario: User selects to make reservation
   And I am on the Modern Beauty services list page
   And I follow "Make Reservation"
   Then I should see "Make New Reservation"
-  And I follow "Cancel"
-  Then I should be on the Modern Beauty services list page

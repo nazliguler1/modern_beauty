@@ -1,5 +1,9 @@
 class User < ActiveRecord::Base
   has_many :authorizations, :dependent => :destroy
+  
+  has_many :reservations
+  has_many :services, through: :reservations
+  
   validates :name, :email, :presence => true
   validate :staff_or_student
   has_one :profile, :dependent => :destroy

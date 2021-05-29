@@ -14,14 +14,13 @@ class ServicesController < ApplicationController
   end
   
   def edit
-    
   end
   
   def create
     @service = Service.new(service_params)
+    
     if @service.save
       redirect_to @service, notice: 'Service was successfully created.'
-    
     else
       render :new
     

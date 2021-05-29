@@ -2,17 +2,14 @@
 
 %ul#info
   %li
-    %b Reservation:
-    = @reservation.id
-//  %li
-//    %b Category:
-//    = @service.category
+    %b Reservation for:
+    = @reservation.name
     
 %h4 Details:
 
 %p
-//  %b Location: 
-//  =@service.location
+  %b Location: 
+  =@reservation.service_location
 %p
   %b Date:
   =@reservation.date

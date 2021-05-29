@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
         self.current_user= auth.user
         message = "Welcome back #{@user.name}! You have logged in via #{auth.provider}."
         flash[:notice] = message
-        redirect_to services_path
+        redirect_to home_path
       else #register
         @user = User.create_with_omniauth(auth_hash['info'])
         auth = Authorization.create_with_omniauth(auth_hash, @user)
@@ -25,8 +25,8 @@ class SessionsController < ApplicationController
         message = "Welcome #{@user.name}! You have signed up via #{auth.provider}."
         flash[:notice] = message
         @profile = @user.create_profile
-        redirect_to edit_user_profile_path(@user,@profile)
-        #redirect_to service_index_path(@user, @profile)
+        #redirect_to edit_user_profile_path(@user,@profile)
+        redirect_to home_path
       end
     rescue ActiveRecord::RecordInvalid,  Exception => exception
       flash[:warning] = "#{exception.class}: #{exception.message}"
