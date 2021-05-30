@@ -5,13 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-profiles = [{:primary_language => 'English', :secondary_language => 'I', :favorite_movie => 'Up', :worst_movie => 'Down', :favorite_genre => 'SF', :user_id => 1}
-     ]
-
-profiles.each do |profile|
-  Profile.create!(profile)
-end
-
 services = [{:name => 'So Jealous Hair Design', :category => 'Hair Salon',:location=> '365 Harry L Dr, Johnson City, NY 13790', :rating => '4.8', :price=>'$$$'},
             {:name => 'Evolution Hair Design Salon and Barber Shop', :category => 'Hair Salon',:location=> '185 Vestal Ave, Binghamton, NY 13903', :rating => '4.5', :price=>'$$$'},
             {:name => 'Miracles Beauty Salon', :category => 'Beauty Salon',:location=> '157 Main St, Binghamton, NY 13905', :rating => '4.0', :price=>'$$'},

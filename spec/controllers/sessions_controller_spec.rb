@@ -38,7 +38,7 @@ RSpec.describe SessionsController, type: :controller do
             post :create, provider: :github
             expect(flash[:notice]).to match(/^Welcome back #{user1.name}! You have logged in via #{auth1.provider}.$/)
           end
-          it 'redirects to the services list page' do
+          it 'redirects to the home page' do
             post :create, provider: :github
             expect(response).to redirect_to(home_path) 
           end
@@ -78,10 +78,6 @@ RSpec.describe SessionsController, type: :controller do
           it "sets a flash message" do
             post :create, provider: :github
             expect(flash[:notice]).to match(/^Welcome #{user.name}! You have signed up via #{auth.provider}.$/)
-          end
-          it "creates an empty user profile" do
-            post :create, provider: :github
-            expect(assigns(:profile)).to have_attributes(id: id2, user_id: 1)
           end
           #it 'redirects to the services list page' do
            # post :create, provider: :github

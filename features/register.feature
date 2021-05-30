@@ -4,12 +4,6 @@ Feature: Register
   So that I can see information about beauty services that interest me
   I want to register for the Modern Beauty application
   
-Background: profiles in databasea
-
-  Given the following profiles exists:
-  | primary_language|secondary_language|favorite_movie|worst_movie|favorite_genre|user_id|
-  | English         | Music            | Blade Runner |Ishtar     |SciFi         |       |    
-
 @omniauth_test1
 Scenario: Register
   Given I am on the Modern Beauty landing page
